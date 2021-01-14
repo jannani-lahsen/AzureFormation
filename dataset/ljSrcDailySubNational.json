@@ -1,5 +1,5 @@
 {
-	"name": "ljDailySubNational",
+	"name": "ljSrcDailySubNational",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ljCreateFile",
