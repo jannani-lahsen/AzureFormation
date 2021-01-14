@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "ljDataSets"
+			"name": "Source"
 		},
 		"annotations": [],
 		"type": "DelimitedText",

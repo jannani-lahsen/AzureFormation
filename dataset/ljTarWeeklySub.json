@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "ljDestination"
+			"name": "Destination"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
