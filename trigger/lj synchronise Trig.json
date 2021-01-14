@@ -9,6 +9,12 @@
 					"referenceName": "lj synchronise",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "lj data ingestion global",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
@@ -16,7 +22,7 @@
 			"recurrence": {
 				"frequency": "Day",
 				"interval": 15,
-				"startTime": "2021-01-14T23:24:00Z",
+				"startTime": "2021-01-15T20:29:00Z",
 				"timeZone": "UTC"
 			}
 		}
