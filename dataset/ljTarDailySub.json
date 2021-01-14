@@ -1,0 +1,24 @@
+{
+	"name": "ljTarDailySub",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ljAzureDataLakeStore",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "ljDestination"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation",
+				"folderPath": "rawdata/europe"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
