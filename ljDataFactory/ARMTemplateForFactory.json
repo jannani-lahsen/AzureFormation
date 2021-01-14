@@ -19207,16 +19207,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ljIR')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/lj synchronise Trig')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -19237,7 +19227,7 @@
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 15,
-						"startTime": "2021-01-14T23:22:00Z",
+						"startTime": "2021-01-15T08:29:00Z",
 						"timeZone": "UTC",
 						"schedule": {}
 					}
@@ -19246,6 +19236,16 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/lj synchronise')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ljIR')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
 		}
 	]
 }
