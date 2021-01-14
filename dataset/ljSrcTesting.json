@@ -5,6 +5,9 @@
 			"referenceName": "ljCreateFile",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "ljDataSets"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
