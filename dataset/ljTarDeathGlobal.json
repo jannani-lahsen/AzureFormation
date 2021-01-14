@@ -1,0 +1,25 @@
+{
+	"name": "ljTarDeathGlobal",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ljAzureDataLakeStore",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destination"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation",
+				"folderPath": "rawdata/johnhopkins"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
