@@ -15,7 +15,7 @@
 				"type": "FileServerLocation",
 				"fileName": "DeathGlobal.csv"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""

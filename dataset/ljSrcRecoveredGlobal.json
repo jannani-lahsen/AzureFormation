@@ -15,7 +15,7 @@
 				"type": "FileServerLocation",
 				"fileName": "recoveredGlobal.csv"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""

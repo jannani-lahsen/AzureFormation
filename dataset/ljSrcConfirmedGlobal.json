@@ -15,7 +15,7 @@
 				"type": "FileServerLocation",
 				"fileName": "confirmedGlbal.csv"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
