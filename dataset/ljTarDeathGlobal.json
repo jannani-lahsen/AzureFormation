@@ -15,7 +15,7 @@
 				"type": "AzureDataLakeStoreLocation",
 				"folderPath": "rawdata/johnhopkins"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
