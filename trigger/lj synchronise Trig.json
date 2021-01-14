@@ -16,7 +16,7 @@
 			"recurrence": {
 				"frequency": "Day",
 				"interval": 15,
-				"startTime": "2021-01-15T20:29:00Z",
+				"startTime": "2021-01-15T08:29:00Z",
 				"timeZone": "UTC"
 			}
 		}
