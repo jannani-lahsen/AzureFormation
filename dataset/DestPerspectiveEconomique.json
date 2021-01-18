@@ -1,0 +1,25 @@
+{
+	"name": "DestPerspectiveEconomique",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "G2AzureFormation",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "TP_Destination"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation",
+				"folderPath": "TP/RawData"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
