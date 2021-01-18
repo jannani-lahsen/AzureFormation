@@ -291,7 +291,7 @@
 				]
 			},
 			{
-				"name": "Copy data1",
+				"name": "Copy_ProjectionPopulation",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -322,7 +322,7 @@
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"quoteAllText": true,
-							"fileExtension": ".csv"
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
@@ -477,7 +477,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DesProjectionPopulation",
+						"referenceName": "DestProjectionPopulation",
 						"type": "DatasetReference"
 					}
 				]
