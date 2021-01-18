@@ -1,0 +1,78 @@
+{
+	"name": "SrcFiscalite",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ljCreateFile",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "TP_Source"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "RS_GBL_Fiscalite.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "COU",
+				"type": "String"
+			},
+			{
+				"name": "Pays",
+				"type": "String"
+			},
+			{
+				"name": "GOV",
+				"type": "String"
+			},
+			{
+				"name": "Niveau d'administration",
+				"type": "String"
+			},
+			{
+				"name": "TAX",
+				"type": "String"
+			},
+			{
+				"name": "Recettes fiscales",
+				"type": "String"
+			},
+			{
+				"name": "VAR",
+				"type": "String"
+			},
+			{
+				"name": "Indicateur",
+				"type": "String"
+			},
+			{
+				"name": "YEA",
+				"type": "String"
+			},
+			{
+				"name": "Année",
+				"type": "String"
+			},
+			{
+				"name": "Value",
+				"type": "String"
+			},
+			{
+				"name": "Flag Codes",
+				"type": "String"
+			},
+			{
+				"name": "Flags",
+				"type": "String"
+			}
+		]
+	}
+}
