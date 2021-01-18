@@ -1,5 +1,5 @@
 {
-	"name": "DesProjectionPopulation",
+	"name": "DestProjectionPopulation",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "G2AzureFormation",
