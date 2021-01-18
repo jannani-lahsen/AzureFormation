@@ -1,0 +1,369 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ljDataFactory"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Emploi')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ljCreateFile",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "TP_Source"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "FileServerLocation",
+						"fileName": "ALFS_EMP_EmploiParActivité.csv"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SrcDepenseDeSante')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ljCreateFile",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "TP_Source"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "FileServerLocation",
+						"fileName": "SHA_DepenseDeSante.csv"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "HF",
+						"type": "String"
+					},
+					{
+						"name": "RΘgime de financement",
+						"type": "String"
+					},
+					{
+						"name": "HC",
+						"type": "String"
+					},
+					{
+						"name": "Fonction",
+						"type": "String"
+					},
+					{
+						"name": "HP",
+						"type": "String"
+					},
+					{
+						"name": "Prestataire",
+						"type": "String"
+					},
+					{
+						"name": "MEASURE",
+						"type": "String"
+					},
+					{
+						"name": "Mesure",
+						"type": "String"
+					},
+					{
+						"name": "LOCATION",
+						"type": "String"
+					},
+					{
+						"name": "Pays",
+						"type": "String"
+					},
+					{
+						"name": "TIME",
+						"type": "String"
+					},
+					{
+						"name": "AnnΘe",
+						"type": "String"
+					},
+					{
+						"name": "Unit Code",
+						"type": "String"
+					},
+					{
+						"name": "Unit",
+						"type": "String"
+					},
+					{
+						"name": "PowerCode Code",
+						"type": "String"
+					},
+					{
+						"name": "PowerCode",
+						"type": "String"
+					},
+					{
+						"name": "Reference Period Code",
+						"type": "String"
+					},
+					{
+						"name": "Reference Period",
+						"type": "String"
+					},
+					{
+						"name": "Value",
+						"type": "String"
+					},
+					{
+						"name": "Flag Codes",
+						"type": "String"
+					},
+					{
+						"name": "Flags",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SrcFiscalite')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ljCreateFile",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "TP_Source"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "FileServerLocation",
+						"fileName": "RS_GBL_Fiscalite.csv"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "COU",
+						"type": "String"
+					},
+					{
+						"name": "Pays",
+						"type": "String"
+					},
+					{
+						"name": "GOV",
+						"type": "String"
+					},
+					{
+						"name": "Niveau d'administration",
+						"type": "String"
+					},
+					{
+						"name": "TAX",
+						"type": "String"
+					},
+					{
+						"name": "Recettes fiscales",
+						"type": "String"
+					},
+					{
+						"name": "VAR",
+						"type": "String"
+					},
+					{
+						"name": "Indicateur",
+						"type": "String"
+					},
+					{
+						"name": "YEA",
+						"type": "String"
+					},
+					{
+						"name": "Année",
+						"type": "String"
+					},
+					{
+						"name": "Value",
+						"type": "String"
+					},
+					{
+						"name": "Flag Codes",
+						"type": "String"
+					},
+					{
+						"name": "Flags",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SrcPopulation')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ljCreateFile",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "TP_Source"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "FileServerLocation",
+						"fileName": "HISTPOP_Population.csv"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "LOCATION",
+						"type": "String"
+					},
+					{
+						"name": "Pays",
+						"type": "String"
+					},
+					{
+						"name": "SEX",
+						"type": "String"
+					},
+					{
+						"name": "Sexe",
+						"type": "String"
+					},
+					{
+						"name": "AGE",
+						"type": "String"
+					},
+					{
+						"name": "Âge",
+						"type": "String"
+					},
+					{
+						"name": "TIME",
+						"type": "String"
+					},
+					{
+						"name": "Temps",
+						"type": "String"
+					},
+					{
+						"name": "Value",
+						"type": "String"
+					},
+					{
+						"name": "Flag Codes",
+						"type": "String"
+					},
+					{
+						"name": "Flags",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		}
+	]
+}

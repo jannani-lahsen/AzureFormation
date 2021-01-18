@@ -11,6 +11,22 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ljCreateFile'"
 		},
+		"G2AzureFormation_properties_typeProperties_dataLakeStoreUri": {
+			"type": "string",
+			"defaultValue": "https://formationazurejc.azuredatalakestore.net/webhdfs/v1"
+		},
+		"G2AzureFormation_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "544fe47f-5772-488f-81a9-fa9de607ecfa"
+		},
+		"G2AzureFormation_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "32ad602f-d364-45c5-ab7f-b8e199af2da0"
+		},
+		"G2AzureFormation_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "rg-BDU_EcoleDeLaData"
+		},
 		"ljAzureDataLakeStore_properties_typeProperties_dataLakeStoreUri": {
 			"type": "string",
 			"defaultValue": "https://ljformationazure.azuredatalakestore.net/webhdfs/v1"
@@ -64,6 +80,18 @@
 					},
 					"ljCreateFile_password": {
 						"value": "[parameters('ljCreateFile_password')]"
+					},
+					"G2AzureFormation_properties_typeProperties_dataLakeStoreUri": {
+						"value": "[parameters('G2AzureFormation_properties_typeProperties_dataLakeStoreUri')]"
+					},
+					"G2AzureFormation_properties_typeProperties_tenant": {
+						"value": "[parameters('G2AzureFormation_properties_typeProperties_tenant')]"
+					},
+					"G2AzureFormation_properties_typeProperties_subscriptionId": {
+						"value": "[parameters('G2AzureFormation_properties_typeProperties_subscriptionId')]"
+					},
+					"G2AzureFormation_properties_typeProperties_resourceGroupName": {
+						"value": "[parameters('G2AzureFormation_properties_typeProperties_resourceGroupName')]"
 					},
 					"ljAzureDataLakeStore_properties_typeProperties_dataLakeStoreUri": {
 						"value": "[parameters('ljAzureDataLakeStore_properties_typeProperties_dataLakeStoreUri')]"
