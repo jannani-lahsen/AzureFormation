@@ -1,0 +1,70 @@
+{
+	"name": "ProtectionSocial",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ljCreateFile",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "TP_Source"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "HEALTH_PROT_ProtectionSociale.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "VAR",
+				"type": "String"
+			},
+			{
+				"name": "Variable",
+				"type": "String"
+			},
+			{
+				"name": "UNIT",
+				"type": "String"
+			},
+			{
+				"name": "Mesure",
+				"type": "String"
+			},
+			{
+				"name": "COU",
+				"type": "String"
+			},
+			{
+				"name": "Pays",
+				"type": "String"
+			},
+			{
+				"name": "YEA",
+				"type": "String"
+			},
+			{
+				"name": "Année",
+				"type": "String"
+			},
+			{
+				"name": "Value",
+				"type": "String"
+			},
+			{
+				"name": "Flag Codes",
+				"type": "String"
+			},
+			{
+				"name": "Flags",
+				"type": "String"
+			}
+		]
+	}
+}
