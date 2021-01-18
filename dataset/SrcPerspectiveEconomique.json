@@ -1,5 +1,5 @@
 {
-	"name": "PerspectiveEconomique",
+	"name": "SrcPerspectiveEconomique",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ljCreateFile",
