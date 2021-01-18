@@ -1,0 +1,102 @@
+{
+	"name": "SrcEmploi",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ljCreateFile",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "TP_Source"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "ALFS_EMP_EmploiParActivité.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "LOCATION",
+				"type": "String"
+			},
+			{
+				"name": "Pays",
+				"type": "String"
+			},
+			{
+				"name": "SUBJECT",
+				"type": "String"
+			},
+			{
+				"name": "Sujet",
+				"type": "String"
+			},
+			{
+				"name": "SEX",
+				"type": "String"
+			},
+			{
+				"name": "Sexe",
+				"type": "String"
+			},
+			{
+				"name": "FREQUENCY",
+				"type": "String"
+			},
+			{
+				"name": "FrÃ©quence",
+				"type": "String"
+			},
+			{
+				"name": "TIME",
+				"type": "String"
+			},
+			{
+				"name": "Temps",
+				"type": "String"
+			},
+			{
+				"name": "Unit Code",
+				"type": "String"
+			},
+			{
+				"name": "Unit",
+				"type": "String"
+			},
+			{
+				"name": "PowerCode Code",
+				"type": "String"
+			},
+			{
+				"name": "PowerCode",
+				"type": "String"
+			},
+			{
+				"name": "Reference Period Code",
+				"type": "String"
+			},
+			{
+				"name": "Reference Period",
+				"type": "String"
+			},
+			{
+				"name": "Value",
+				"type": "String"
+			},
+			{
+				"name": "Flag Codes",
+				"type": "String"
+			},
+			{
+				"name": "Flags",
+				"type": "String"
+			}
+		]
+	}
+}
