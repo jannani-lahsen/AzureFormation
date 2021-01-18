@@ -1,5 +1,5 @@
 {
-	"name": "TarProjectionPopulation",
+	"name": "DesProjectionPopulation",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "G2AzureFormation",
