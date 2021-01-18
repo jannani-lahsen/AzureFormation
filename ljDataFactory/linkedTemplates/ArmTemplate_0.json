@@ -315,6 +315,36 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DestProtectionSociale')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "G2AzureFormation",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "TP_Destination"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureDataLakeStoreLocation",
+						"folderPath": "TP/RawData"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/G2AzureFormation')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/SrcDepenseDeSante')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2477,53 +2507,6 @@
 					},
 					{
 						"name": "1/13/21",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ljCreateFile')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ljSrcCountryResponse')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "ljCreateFile",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Source"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "FileServerLocation",
-						"fileName": "Country response.csv"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "Country",
-						"type": "String"
-					},
-					{
-						"name": "Response_measure",
-						"type": "String"
-					},
-					{
-						"name": "date_start",
-						"type": "String"
-					},
-					{
-						"name": "date_end",
 						"type": "String"
 					}
 				]

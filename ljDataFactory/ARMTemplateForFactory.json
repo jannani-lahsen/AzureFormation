@@ -1343,6 +1343,200 @@
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "Copy_Protection_Sociale",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "FileServerReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureDataLakeStoreWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".csv"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "VAR",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "VAR",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Variable",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Variable",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "UNIT",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "UNIT",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Mesure",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Mesure",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "COU",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "COU",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Pays",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Pays",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "YEA",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "YEA",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Année",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Année",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Value",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Value",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Flag Codes",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Flag Codes",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Flags",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Flags",
+											"type": "String",
+											"physicalType": "String"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SrcProtectionSocial",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DestProtectionSociale",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
 					}
 				],
 				"annotations": []
@@ -1357,7 +1551,9 @@
 				"[concat(variables('factoryId'), '/datasets/SrcDepenseDeSante')]",
 				"[concat(variables('factoryId'), '/datasets/DestDepenseDeSante')]",
 				"[concat(variables('factoryId'), '/datasets/SrcPerspectiveEconomique')]",
-				"[concat(variables('factoryId'), '/datasets/DestPerspectiveEconomique')]"
+				"[concat(variables('factoryId'), '/datasets/DestPerspectiveEconomique')]",
+				"[concat(variables('factoryId'), '/datasets/SrcProtectionSocial')]",
+				"[concat(variables('factoryId'), '/datasets/DestProtectionSociale')]"
 			]
 		},
 		{
@@ -15579,6 +15775,36 @@
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DestProjectionPopulation')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "G2AzureFormation",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "TP_Destination"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureDataLakeStoreLocation",
+						"folderPath": "TP/RawData"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/G2AzureFormation')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestProtectionSociale')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
