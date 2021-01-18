@@ -1275,7 +1275,7 @@
 				]
 			},
 			{
-				"name": "Copy_ProjectionPopoulation",
+				"name": "Copy_Protection_Sociale",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -1306,7 +1306,7 @@
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"fileExtension": ".csv"
 						}
 					},
 					"enableStaging": false,
@@ -1315,12 +1315,60 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "LOCATION",
+									"name": "VAR",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "LOCATION",
+									"name": "VAR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Variable",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Variable",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UNIT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UNIT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Mesure",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Mesure",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COU",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "COU",
 									"type": "String",
 									"physicalType": "String"
 								}
@@ -1339,72 +1387,24 @@
 							},
 							{
 								"source": {
-									"name": "SEX",
+									"name": "YEA",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "SEX",
+									"name": "YEA",
 									"type": "String",
 									"physicalType": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "Sexe",
+									"name": "Année",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Sexe",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "AGE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "AGE",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Âge",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Âge",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "TIME",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "TIME",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Temps",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Temps",
+									"name": "Année",
 									"type": "String",
 									"physicalType": "String"
 								}
@@ -1455,13 +1455,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SrcProjectionPopulation",
+						"referenceName": "SrcProtectionSocial",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestProjectionPopulation",
+						"referenceName": "DestProtectionSociale",
 						"type": "DatasetReference"
 					}
 				]
