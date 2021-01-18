@@ -1,5 +1,5 @@
 {
-	"name": "ProtectionSocial",
+	"name": "SrcProtectionSocial",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ljCreateFile",
