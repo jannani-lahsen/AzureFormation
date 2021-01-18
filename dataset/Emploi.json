@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "TP_Destination"
+			"name": "TP_Source"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
