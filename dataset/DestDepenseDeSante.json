@@ -1,5 +1,5 @@
 {
-	"name": "TarDepenseDeSante",
+	"name": "DestDepenseDeSante",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "G2AzureFormation",
