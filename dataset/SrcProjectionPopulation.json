@@ -1,0 +1,70 @@
+{
+	"name": "SrcProjectionPopulation",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ljCreateFile",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "TP_Source"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "POPPROJ_ProjectionPopulation.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "LOCATION",
+				"type": "String"
+			},
+			{
+				"name": "Pays",
+				"type": "String"
+			},
+			{
+				"name": "SEX",
+				"type": "String"
+			},
+			{
+				"name": "Sexe",
+				"type": "String"
+			},
+			{
+				"name": "AGE",
+				"type": "String"
+			},
+			{
+				"name": "Âge",
+				"type": "String"
+			},
+			{
+				"name": "TIME",
+				"type": "String"
+			},
+			{
+				"name": "Temps",
+				"type": "String"
+			},
+			{
+				"name": "Value",
+				"type": "String"
+			},
+			{
+				"name": "Flag Codes",
+				"type": "String"
+			},
+			{
+				"name": "Flags",
+				"type": "String"
+			}
+		]
+	}
+}
