@@ -291,7 +291,7 @@
 				]
 			},
 			{
-				"name": "Copy_ProjectionPopulation",
+				"name": "Copy_Fiscalite",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -322,7 +322,223 @@
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"fileExtension": ".csv"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "COU",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "COU",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Pays",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Pays",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GOV",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GOV",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Niveau d'administration",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Niveau d'administration",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TAX",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TAX",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Recettes fiscales",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Recettes fiscales",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VAR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Indicateur",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Indicateur",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "YEA",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "YEA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Année",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Année",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Value",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Value",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Flag Codes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Flag Codes",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Flags",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Flags",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SrcFiscalite",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestFiscalite",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy_Population",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "FileServerReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureDataLakeStoreWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".csv"
 						}
 					},
 					"enableStaging": false,
@@ -471,13 +687,589 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SrcProjectionPopulation",
+						"referenceName": "SrcPopulation",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestProjectionPopulation",
+						"referenceName": "DestPopulation",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy_DepensesDeSante",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "FileServerReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureDataLakeStoreWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".csv"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "HF",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HF",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RΘgime de financement",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RΘgime de financement",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HC",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HC",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Fonction",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Fonction",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HP",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Prestataire",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Prestataire",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MEASURE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MEASURE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Mesure",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Mesure",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LOCATION",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Pays",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Pays",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TIME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TIME",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AnnΘe",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AnnΘe",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit Code",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PowerCode Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PowerCode Code",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PowerCode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PowerCode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Reference Period Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Reference Period Code",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Reference Period",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Reference Period",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Value",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Value",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Flag Codes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Flag Codes",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Flags",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Flags",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SrcDepenseDeSante",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestDepenseDeSante",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy_PerspectiveEconomique",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "FileServerReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureDataLakeStoreWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".csv"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "LOCATION",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LOCATION",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Pays",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Pays",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VARIABLEEn",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VARIABLEEn",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Variable",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Variable",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FREQUENCY",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FREQUENCY",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Fréquence",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Fréquence",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TIME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TIME",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Temps",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Temps",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit Code",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PowerCode Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PowerCode Code",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PowerCode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PowerCode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Reference Period Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Reference Period Code",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Reference Period",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Reference Period",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Value",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Value",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Flag Codes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Flag Codes",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Flags",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Flags",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SrcPerspectiveEconomique",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestPerspectiveEconomique",
 						"type": "DatasetReference"
 					}
 				]
